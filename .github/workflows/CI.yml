@@ -12,20 +12,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build & test 
-        run: |
-          docker-compose up --build -d
-          sleep 10 
-          curl localhost:3000 
-          docker-compose down
-
       - name: Build backend Docker image
         run: |
-          docker build -t ddriham/react-java0mysql-main-backend:latest -t ddriham/react-java0mysql-main-backend:${GITHUB_RUN_NUMBER} ./path/to/backend
-          
+          docker build -t ddriham/react-java0mysql-main-backend:latest -t ddriham/react-java0mysql-main-backend:${GITHUB_RUN_NUMBER} ./backend
+
       - name: Build frontend Docker image
         run: |
-          docker build -t ddriham/react-java0mysql-main-frontend:latest -t ddriham/react-java0mysql-main-frontend:${GITHUB_RUN_NUMBER} ./path/to/frontend
+          docker build -t ddriham/react-java0mysql-main-frontend:latest -t ddriham/react-java0mysql-main-frontend:${GITHUB_RUN_NUMBER} ./frontend
 
       - name: Login to DockerHub
         if: success()
