@@ -15,9 +15,17 @@ jobs:
       - name: Build & test 
         run: |
           docker-compose up --build -d
-          sleep 10 # Adjust sleep time as needed
-          curl localhost:3000 # Adjust port if needed
+          sleep 10 
+          curl localhost:3000 
           docker-compose down
+
+      - name: Build backend Docker image
+        run: |
+          docker build -t ddriham/react-java0mysql-main-backend:latest -t ddriham/react-java0mysql-main-backend:${GITHUB_RUN_NUMBER} ./path/to/backend
+          
+      - name: Build frontend Docker image
+        run: |
+          docker build -t ddriham/react-java0mysql-main-frontend:latest -t ddriham/react-java0mysql-main-frontend:${GITHUB_RUN_NUMBER} ./path/to/frontend
 
       - name: Login to DockerHub
         if: success()
