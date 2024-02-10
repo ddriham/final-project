@@ -1,4 +1,3 @@
-## Compose sample application
 
 ### Use with Docker Development Environments
 
