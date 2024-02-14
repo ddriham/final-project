@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    runs-on: [self-hosted, linux] # Ensure this matches your self-hosted runner's labels
+    runs-on: [self-hosted] # Ensure this matches your self-hosted runner's labels
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
