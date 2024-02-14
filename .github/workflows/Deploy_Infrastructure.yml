@@ -18,7 +18,8 @@ jobs:
 
       - name: Initialize and Apply Terragrunt Configuration
         run: |
-          pwd
+          cd /home/ubuntu/actions-runner/_work/final-project/final-project/infrasturcture
+          terragrunt run-all apply --terragrunt-non-interactive
           
         env:
           # Your environment variables, like cloud provider credentials
