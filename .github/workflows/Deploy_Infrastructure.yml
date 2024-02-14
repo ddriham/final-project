@@ -18,9 +18,8 @@ jobs:
 
       - name: Initialize and Apply Terragrunt Configuration
         run: |
-          cd infrastructure
-          terragrunt init
-          terragrunt apply -auto-approve
+          pwd
+          
         env:
           # Your environment variables, like cloud provider credentials
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
