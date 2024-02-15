@@ -20,6 +20,10 @@ inputs = {
   monitoring_namespace     = "monitoring"
   grafana_admin_password   = "Aa123456"
   grafana_url              = "grafana.ddriham.local"
+
+  openid_provider_arn = dependency.eks.outputs.openid_provider_arn
+  enable_cluster_autoscaler      = true
+  cluster_autoscaler_helm_verion = "9.35.0"
 }
 
 dependency "eks" {
@@ -27,6 +31,7 @@ dependency "eks" {
   
   mock_outputs = {
     eks_name = "ddriham-eks-cluster"
+    openid_provider_arn = "arn:aws:iam::123456789012:oidc-provider"
   }
 }
 
