@@ -19,7 +19,7 @@ jobs:
       - name: Deploy Application to Argo CD
         run: |
           cd /home/ubuntu/actions-runner/_work/final-project/final-project/infrasturcture/argocd_manifest
-          kubectl apply -f react-app-argo-application.yaml
+          kubectl apply -f react_app.yaml
 
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
