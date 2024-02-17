@@ -6,7 +6,7 @@ on:
     types:
       - completed
     branches:
-      - main
+      - staging
 
 jobs:
   deploy-to-argocd:
