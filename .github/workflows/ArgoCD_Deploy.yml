@@ -18,6 +18,7 @@ jobs:
 
       - name: Deploy Application to Argo CD
         run: |
+          sleep 30s
           cd /home/ubuntu/actions-runner/_work/final-project/final-project/infrasturcture/argocd_manifest
           kubectl apply -f react_app.yaml
 
