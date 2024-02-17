@@ -46,7 +46,7 @@ metadata:
   name: db
   namespace: myapp
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: mysql
