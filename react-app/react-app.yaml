@@ -9,7 +9,7 @@ metadata:
   name: backend
   namespace: myapp
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: backend
@@ -46,7 +46,7 @@ metadata:
   name: db
   namespace: myapp
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: mysql
@@ -104,7 +104,7 @@ metadata:
   name: frontend
   namespace: myapp
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: frontend
