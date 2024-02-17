@@ -41,12 +41,13 @@ spec:
     app: backend
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: db
+  name: mysql
   namespace: myapp
 spec:
-  replicas: 1
+  serviceName: "mysql"
+  replicas: 4
   selector:
     matchLabels:
       app: mysql
@@ -60,18 +61,22 @@ spec:
         image: mysql:8.0.27
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: db-57xsl
+          value: "db-57xsl"
         - name: MYSQL_DATABASE
-          value: example
+          value: "example"
         ports:
         - containerPort: 3306
         volumeMounts:
         - mountPath: /var/lib/mysql
           name: mysql-storage
-      volumes:
-      - name: mysql-storage
-        persistentVolumeClaim:
-          claimName: mysql-pvc
+  volumeClaimTemplates:
+  - metadata:
+      name: mysql-storage
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 1Gi
 ---
 apiVersion: v1
 kind: Service
