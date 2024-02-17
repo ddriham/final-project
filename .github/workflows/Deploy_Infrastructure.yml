@@ -18,7 +18,7 @@ jobs:
 
       - name: Initialize and Apply Terragrunt Configuration
         run: |
-          cd /home/ubuntu/actions-runner/_work/final-project/final-project/infrastructure
+          cd /home/ubuntu/actions-runner/_work/final-project/final-project/infrastructure/dev
           terragrunt run-all apply --terragrunt-non-interactive
           
         env:
