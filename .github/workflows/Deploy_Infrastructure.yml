@@ -1,8 +1,8 @@
-name: Deploy Infrastructure
+name: Deploy Infrastructure-dev
 
 on:
   workflow_run:
-    workflows: ["CI"] 
+    workflows: ["CI-dev"] 
     types:
       - completed
     branches:
