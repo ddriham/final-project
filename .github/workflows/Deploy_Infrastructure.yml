@@ -1,8 +1,8 @@
-name: Deploy Infrastructure
+name: Deploy Infrastructure-staging
 
 on:
   workflow_run:
-    workflows: ["CI"] 
+    workflows: ["CI-staging"] 
     types:
       - completed
     branches:
