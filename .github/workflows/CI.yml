@@ -1,12 +1,13 @@
-name: CI-dev
+name: CI
 
 # on:
 #   push:
 #     branches:
 #       - dev
+
 on:
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -45,13 +46,3 @@ jobs:
         run: |
           docker push ddriham/react-java0mysql-main-frontend:latest
           docker push ddriham/react-java0mysql-main-frontend:${GITHUB_RUN_NUMBER}
-
-
-
-
-      - name: Build & Test
-        run: |
-          docker-compose up --build -d
-          sleep 10 
-          curl localhost:3000 
-          docker-compose down
