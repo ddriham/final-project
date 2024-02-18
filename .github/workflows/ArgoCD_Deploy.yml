@@ -20,6 +20,7 @@ jobs:
         run: |
           sleep 30s
           cd /home/ubuntu/actions-runner/_work/final-project/final-project/infrastructure/argocd_manifest
+          aws eks update-kubeconfig --region us-east-2 --name staging-ddriham
           kubectl apply -f react_app.yaml
           sleep 30s
           aws eks update-kubeconfig --region us-east-2 --name dev-ddriham
