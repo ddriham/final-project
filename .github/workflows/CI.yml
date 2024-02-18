@@ -1,9 +1,12 @@
 name: CI-staging
 
+# on:
+#   push:
+#     branches:
+#       - staging
+
 on:
-  push:
-    branches:
-      - staging
+  workflow_dispatch:
 
 jobs:
   build:
