@@ -1,4 +1,4 @@
-### build a docker compose
+#### build a docker compose
 ### Use with Docker Development Environments
 
 You can open this sample in the Dev Environments feature of Docker Desktop version 4.12 or later.
