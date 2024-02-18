@@ -1,8 +1,8 @@
-name: Deploy With ArgoCD-main
+name: Deploy With ArgoCD
 
 on:
   workflow_run:
-    workflows: ["Deploy Infrastructure-main"]
+    workflows: ["Deploy Infrastructure"]
     types:
       - completed
     branches:
