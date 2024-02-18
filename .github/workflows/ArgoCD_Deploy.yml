@@ -21,6 +21,9 @@ jobs:
           sleep 30s
           cd /home/ubuntu/actions-runner/_work/final-project/final-project/infrastructure/argocd_manifest
           kubectl apply -f react_app.yaml
+          sleep 30s
+          aws eks update-kubeconfig --region us-east-2 --name dev-ddriham
+          kubectl apply -f react_app.yaml
 
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
