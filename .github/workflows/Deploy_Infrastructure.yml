@@ -1,4 +1,4 @@
-name: Deploy Infrastructure-main
+name: Deploy Infrastructure
 
 on:
   workflow_run:
