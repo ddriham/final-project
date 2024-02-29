@@ -10,6 +10,7 @@ The project employs GitHub Actions to orchestrate the workflow, which is compris
 
 1. **Continuous Integration**: With each push, a CI pipeline is activated to validate code quality and successful builds.
 2. **Infrastructure Provisioning**: Following a successful CI run, an infrastructure pipeline is triggered, utilizing Terraform modules housed in a separate repository named `final-project-modules`. These are managed with Terragrunt to facilitate deployment automation.
+modules: https://github.com/ddriham/final-project-modules.git
 3. **Continuous Deployment**: Post infrastructure setup, a CD pipeline deploys the React application and its components on the Kubernetes cluster using Argo CD.
 
 The CD pipeline with Argo CD is crucial as it ensures that any changes pushed to the respective branches are automatically deployed to the corresponding `dev` or `staging` environment. This means a push to the `dev` branch triggers the deployment only on the development infrastructure, and similarly for `staging`. on push to main both environments will be built.
